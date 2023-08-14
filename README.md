@@ -2,7 +2,7 @@
 ## Build and Run in VSCode
 
 Use using Visual Studio Code.
-Navigate to the RoverIntersection folder
+Navigate to the rover-intersection folder
 ```cmd
 dotnet run
 ```
