@@ -64,29 +64,32 @@
 				{
 					case '|':
 						_platau.VisualRepresantation[Position.X][Position.Y] = print;
-
-						if (_prevMove == '-')
-							if (direction == "up" && _platau.VisualRepresantation[Position.X][Position.Y - 1] != '*')
-								_platau.VisualRepresantation[Position.X][Position.Y - 1] = '+';
-							else if (direction == "down" && _platau.VisualRepresantation[Position.X][Position.Y + 1] != '*')
-								_platau.VisualRepresantation[Position.X][Position.Y + 1] = '+';
 						break;
 					case '-':
 						_platau.VisualRepresantation[Position.X][Position.Y] = print;
-
-						if (_prevMove == '|')
-							if (direction == "right" && _platau.VisualRepresantation[Position.X - 1][Position.Y] != '*')
-								_platau.VisualRepresantation[Position.X - 1][Position.Y] = '+';
-							else if (direction == "left" && _platau.VisualRepresantation[Position.X + 1][Position.Y] != '*')
-								_platau.VisualRepresantation[Position.X + 1][Position.Y] = '+';
 						break;
 				}
 			}
+
+			Turn(direction);
 
 			if (_moveCount == Moves.Length)
 				_platau.VisualRepresantation[Position.X][Position.Y] = '0';
 
 			_prevMove = print;
+		}
+
+		private void Turn(string direction){
+			if (_prevMove == '-'){
+				if (direction == "up" && _platau.VisualRepresantation[Position.X][Position.Y - 1] != '*')
+					_platau.VisualRepresantation[Position.X][Position.Y - 1] = '+';
+				else if (direction == "down" && _platau.VisualRepresantation[Position.X][Position.Y + 1] != '*')
+					_platau.VisualRepresantation[Position.X][Position.Y + 1] = '+';
+			}else if (_prevMove == '|')
+				if (direction == "right" && _platau.VisualRepresantation[Position.X - 1][Position.Y] != '*')
+					_platau.VisualRepresantation[Position.X - 1][Position.Y] = '+';
+				else if (direction == "left" && _platau.VisualRepresantation[Position.X + 1][Position.Y] != '*')
+					_platau.VisualRepresantation[Position.X + 1][Position.Y] = '+';
 		}
     }
 }
