@@ -42,15 +42,12 @@ namespace RoverIntersection
 				{
 					case "2":
 						var position = GetPointFromConsole("Enter the rover's initial position");
-						
-
+						// Add a Rover if it is inside the Platau
 						if (position.X >= 0 && position.X <= platau.TopRight?.X && position.Y >= 0 && position.Y <= platau.TopRight?.Y)
 						{
 							Console.WriteLine("Enter the series of instructions telling rover how to explore the plateau");
 							var moves = Console.ReadLine();
-							// Add a Rover if it is inside the Platau
 							var rover = new Rover(new Point() { X = position.X, Y = position.Y }, platau, moves!);
-
 							rovers.Add(rover);
 						}else
 						{
