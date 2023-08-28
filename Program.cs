@@ -9,7 +9,7 @@ namespace RoverIntersection
 			string input;
 			string terminater = string.Empty;
 
-            while (terminater != "quit")
+            while (terminater != "quit") 
             {
 				Console.WriteLine("Press 1 to continue or Press 0 to quit");
 				input = Console.ReadLine()!;
